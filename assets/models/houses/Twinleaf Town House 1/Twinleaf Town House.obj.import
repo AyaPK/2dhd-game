@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://uebvre3aigf5"
+path="res://.godot/imported/Twinleaf Town House.obj-322caede6e271fa990ac87c4b3791735.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Twinleaf Town House.obj-322caede6e271fa990ac87c4b3791735.mesh"]
+
+source_file="res://assets/models/houses/Twinleaf Town House 1/Twinleaf Town House.obj"
+dest_files=["res://.godot/imported/Twinleaf Town House.obj-322caede6e271fa990ac87c4b3791735.mesh", "res://.godot/imported/Twinleaf Town House.obj-322caede6e271fa990ac87c4b3791735.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
