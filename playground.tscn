@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cxu1sylaobapc"]
+[gd_scene load_steps=18 format=3 uid="uid://cxu1sylaobapc"]
 
 [ext_resource type="Script" uid="uid://c1im447yqs3e2" path="res://character_body_3d.gd" id="1_wt17y"]
 [ext_resource type="Texture2D" uid="uid://7ha6o2s5vaol" path="res://assets/character/female.png" id="2_wt17y"]
@@ -169,6 +169,8 @@ _data = {
 &"walk_up": SubResource("Animation_wt17y")
 }
 
+[sub_resource type="BoxMesh" id="BoxMesh_is3ju"]
+
 [node name="Node3D" type="Node3D"]
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
@@ -180,7 +182,7 @@ material = SubResource("StandardMaterial3D_is3ju")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 
 [node name="twinlife town house 1" parent="." instance=ExtResource("4_is3ju")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4947526, -0.75017166, -0.9809656)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4947526, -0.74354506, -0.9809656)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, -0.31361917, 0.21901345, 5.466367)
@@ -199,7 +201,7 @@ texture = ExtResource("2_wt17y")
 hframes = 12
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(0.12497696, -0.0017861098, 0.0016025847, 0, 0.08347907, 0.09303894, -0.0023996804, -0.093021795, 0.08346368, 0, 1.2510829, 0.5144553)
+transform = Transform3D(0.125, 0, 0, 0, 0.08347906, 0.09303893, 0, -0.09303893, 0.08347906, 0, 1.2510829, 0.5144553)
 projection = 1
 size = 16.0
 
@@ -208,3 +210,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_4bqqs")
 }
 autoplay = "idle_down"
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_is3ju")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]

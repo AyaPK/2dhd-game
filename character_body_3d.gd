@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 const TILE_SIZE := 2
-const MOVE_SPEED := 10 # tiles per second
+const MOVE_SPEED := 4 # tiles per second
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -28,14 +28,17 @@ func _physics_process(delta: float) -> void:
 
 
 func _handle_input() -> void:
+	if is_moving:
+		return  # ignore input while moving
+
 	var input_dir := Vector2.ZERO
-	if Input.is_action_just_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right"):
 		input_dir = Vector2.RIGHT
-	elif Input.is_action_just_pressed("ui_left"):
+	elif Input.is_action_pressed("ui_left"):
 		input_dir = Vector2.LEFT
-	elif Input.is_action_just_pressed("ui_down"):
+	elif Input.is_action_pressed("ui_down"):
 		input_dir = Vector2.DOWN
-	elif Input.is_action_just_pressed("ui_up"):
+	elif Input.is_action_pressed("ui_up"):
 		input_dir = Vector2.UP
 
 	if input_dir != Vector2.ZERO:
