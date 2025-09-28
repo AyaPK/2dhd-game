@@ -16,6 +16,7 @@ data = PackedVector3Array(5, 13, -12.0547, 23.1094, 13, -32.168, 23.1094, 13, -1
 material_overlay = SubResource("ShaderMaterial_2b04t")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Twinleaf Town House" index="0"]
+collision_layer = 16
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Twinleaf Town House/StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_stuo0")

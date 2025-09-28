@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://d12i0s764y4rq"]
+
+[ext_resource type="Texture2D" uid="uid://d4ipciaf2ib3q" path="res://assets/models/tiles/grass.png" id="1_dxx8f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_axt2h"]
+load_path = "res://.godot/imported/grass-left.png-81ea3e115d58d4e4db8bb21a073475f5.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rpfwh"]
+albedo_texture = SubResource("CompressedTexture2D_axt2h")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_op6mg"]
+material = SubResource("StandardMaterial3D_rpfwh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p1x2o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvvab"]
+albedo_texture = ExtResource("1_dxx8f")
+uv2_scale = Vector3(3, 2, 1)
+texture_filter = 0
+
+[sub_resource type="BoxMesh" id="BoxMesh_axt2h"]
+material = SubResource("StandardMaterial3D_dvvab")
+
+[node name="MeshLib" type="Node3D"]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_op6mg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D2"]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D2/StaticBody3D"]
+shape = SubResource("BoxShape3D_p1x2o")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_axt2h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_p1x2o")
